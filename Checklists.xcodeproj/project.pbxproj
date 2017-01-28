@@ -13,6 +13,7 @@
 		5046D0FD1E3ABF20003630C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5046D0FC1E3ABF20003630C4 /* Assets.xcassets */; };
 		5046D1001E3ABF20003630C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5046D0FE1E3ABF20003630C4 /* LaunchScreen.storyboard */; };
 		5046D1081E3AC9D6003630C4 /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5046D1071E3AC9D6003630C4 /* ChecklistItem.swift */; };
+		508D94F11E3C331900CD9466 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508D94F01E3C331900CD9466 /* AddItemViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		5046D0FF1E3ABF20003630C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5046D1011E3ABF20003630C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5046D1071E3AC9D6003630C4 /* ChecklistItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChecklistItem.swift; sourceTree = "<group>"; };
+		508D94F01E3C331900CD9466 /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				5046D0FE1E3ABF20003630C4 /* LaunchScreen.storyboard */,
 				5046D1011E3ABF20003630C4 /* Info.plist */,
 				5046D1071E3AC9D6003630C4 /* ChecklistItem.swift */,
+				508D94F01E3C331900CD9466 /* AddItemViewController.swift */,
 			);
 			path = Checklists;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5046D0F81E3ABF20003630C4 /* ChecklistViewController.swift in Sources */,
+				508D94F11E3C331900CD9466 /* AddItemViewController.swift in Sources */,
 				5046D1081E3AC9D6003630C4 /* ChecklistItem.swift in Sources */,
 				5046D0F61E3ABF20003630C4 /* AppDelegate.swift in Sources */,
 			);
@@ -301,6 +305,7 @@
 				5046D1061E3ABF20003630C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

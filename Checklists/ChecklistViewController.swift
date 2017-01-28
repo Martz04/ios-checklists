@@ -63,6 +63,12 @@ class ChecklistViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        items.remove(at: indexPath.row)
+        let indexPaths = [indexPath]
+        tableView.deleteRows(at: indexPaths, with: .automatic)
+    }
+    
     func configureCheckMark(for cell:UITableViewCell, with item:ChecklistItem) -> Void {
         if(item.checked) {
             cell.accessoryType = .checkmark
@@ -74,6 +80,17 @@ class ChecklistViewController: UITableViewController {
     func configureText(for cell: UITableViewCell, with item: ChecklistItem) -> Void {
         let label = cell.viewWithTag(1000) as! UILabel
         label.text = item.text
+    }
+    @IBAction func addItem(_ sender: UIBarButtonItem) {
+        let newIndex = items.count
+        let checklist = ChecklistItem()
+        checklist.text = "New Item added"
+        checklist.checked = true
+        items.append(checklist)
+        let indexPath = IndexPath(row: newIndex, section: 0)
+        let indexPaths = [indexPath]
+        
+        tableView.insertRows(at: indexPaths, with: .automatic)
     }
 }
 
