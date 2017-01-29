@@ -8,26 +8,52 @@
 
 import UIKit
 
+protocol AddItemViewControllerDelegate: class {
+    func addItemViewControllerDidCancel(_ controller: AddItemViewController)
+    func addItemViewController(_ controller: AddItemViewController, didFinishAdding item: ChecklistItem)
+    func addItemViewController(_ controller: AddItemViewController, didFinishEditing item: ChecklistItem)
+}
+
 class AddItemViewController: UITableViewController, UITextFieldDelegate {
     
     @IBOutlet weak var textInput: UITextField!
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    
+    weak var delegate: AddItemViewControllerDelegate?
+    var itemToEdit: ChecklistItem?
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         textInput.becomeFirstResponder()
+        if let item = itemToEdit {
+            title = "Edit Item"
+            textInput.text = item.text
+            saveButton.isEnabled = true
+        }
     }
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         return nil
     }
     
     @IBAction func save() {
-        print("The value of the textfield is: \(textInput.text)")
-        dismiss(animated: true, completion: nil)
+        if let item = itemToEdit {
+            item.text = textInput.text!
+            
+            delegate?.addItemViewController(self, didFinishEditing: item)
+        }else {
+            let checklist = ChecklistItem()
+            checklist.text = textInput.text!
+            checklist.checked = false
+            
+            delegate?.addItemViewController(self, didFinishAdding: checklist)
+        }
+        
     }
     
     @IBAction func cancel(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        
+        delegate?.addItemViewControllerDidCancel(self)
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
