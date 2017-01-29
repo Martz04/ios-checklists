@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Checklists/ChecklistItem.swift"
+            timestampString = "507401095.343794"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "ChecklistItem"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Checklists.ChecklistItem.__deallocating_deinit"
+                  moduleName = "Checklists"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Martz/Documents/GIT/Checklists/Checklists/ChecklistItem.swift"
+                  timestampString = "507401098.340525"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Checklists.ChecklistItem.init () -&gt; Checklists.ChecklistItem"
+                  moduleName = "Checklists"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Martz/Documents/GIT/Checklists/Checklists/ChecklistItem.swift"
+                  timestampString = "507401098.348451"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Checklists.ChecklistItem.__allocating_init () -&gt; Checklists.ChecklistItem"
+                  moduleName = "Checklists"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Martz/Documents/GIT/Checklists/Checklists/ChecklistItem.swift"
+                  timestampString = "507401098.350827"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

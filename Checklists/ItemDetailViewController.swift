@@ -1,5 +1,5 @@
 //
-//  AddItemViewController.swift
+//  ItemDetailViewController.swift
 //  Checklists
 //
 //  Created by Mario Alberto Gonzalez on 27/01/17.
@@ -8,19 +8,19 @@
 
 import UIKit
 
-protocol AddItemViewControllerDelegate: class {
-    func addItemViewControllerDidCancel(_ controller: AddItemViewController)
-    func addItemViewController(_ controller: AddItemViewController, didFinishAdding item: ChecklistItem)
-    func addItemViewController(_ controller: AddItemViewController, didFinishEditing item: ChecklistItem)
+protocol ItemDetailViewControllerDelegate: class {
+    func itemDetailViewControllerDidCancel(_ controller: ItemDetailViewController)
+    func itemDetailViewController(_ controller: ItemDetailViewController, didFinishAdding item: ChecklistItem)
+    func itemDetailViewController(_ controller: ItemDetailViewController, didFinishEditing item: ChecklistItem)
 }
 
-class AddItemViewController: UITableViewController, UITextFieldDelegate {
+class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
     
     @IBOutlet weak var textInput: UITextField!
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
-    weak var delegate: AddItemViewControllerDelegate?
+    weak var delegate: ItemDetailViewControllerDelegate?
     var itemToEdit: ChecklistItem?
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,21 +39,19 @@ class AddItemViewController: UITableViewController, UITextFieldDelegate {
     @IBAction func save() {
         if let item = itemToEdit {
             item.text = textInput.text!
-            
-            delegate?.addItemViewController(self, didFinishEditing: item)
+            delegate?.itemDetailViewController(self, didFinishEditing: item)
         }else {
             let checklist = ChecklistItem()
             checklist.text = textInput.text!
             checklist.checked = false
             
-            delegate?.addItemViewController(self, didFinishAdding: checklist)
+            delegate?.itemDetailViewController(self, didFinishAdding: checklist)
         }
         
     }
     
     @IBAction func cancel(_ sender: Any) {
-        
-        delegate?.addItemViewControllerDidCancel(self)
+        delegate?.itemDetailViewControllerDidCancel(self)
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
