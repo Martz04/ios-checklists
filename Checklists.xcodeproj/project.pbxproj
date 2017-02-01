@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		500D00AC1E415900009CCC1A /* ListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500D00AB1E415900009CCC1A /* ListDetailViewController.swift */; };
 		5036A8BF1E4035F200FDA810 /* AllListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5036A8BE1E4035F200FDA810 /* AllListsViewController.swift */; };
 		5036A8C11E403D5900FDA810 /* Checklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5036A8C01E403D5900FDA810 /* Checklist.swift */; };
 		5046D0F61E3ABF20003630C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5046D0F51E3ABF20003630C4 /* AppDelegate.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		500D00AB1E415900009CCC1A /* ListDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListDetailViewController.swift; sourceTree = "<group>"; };
 		5036A8BE1E4035F200FDA810 /* AllListsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllListsViewController.swift; sourceTree = "<group>"; };
 		5036A8C01E403D5900FDA810 /* Checklist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checklist.swift; sourceTree = "<group>"; };
 		5046D0F21E3ABF20003630C4 /* Checklists.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Checklists.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +74,7 @@
 				508D94F01E3C331900CD9466 /* ItemDetailViewController.swift */,
 				5036A8BE1E4035F200FDA810 /* AllListsViewController.swift */,
 				5036A8C01E403D5900FDA810 /* Checklist.swift */,
+				500D00AB1E415900009CCC1A /* ListDetailViewController.swift */,
 			);
 			path = Checklists;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5046D0F81E3ABF20003630C4 /* ChecklistViewController.swift in Sources */,
+				500D00AC1E415900009CCC1A /* ListDetailViewController.swift in Sources */,
 				508D94F11E3C331900CD9466 /* ItemDetailViewController.swift in Sources */,
 				5036A8C11E403D5900FDA810 /* Checklist.swift in Sources */,
 				5046D1081E3AC9D6003630C4 /* ChecklistItem.swift in Sources */,
