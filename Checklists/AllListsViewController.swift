@@ -26,6 +26,13 @@ class AllListsViewController: UITableViewController, AllListsViewControllerDeleg
         
         list = Checklist(name: "To Do")
         lists.append(list)
+        for checklist in lists {
+            let item = ChecklistItem()
+            item.text = "Item for \(checklist.text)"
+            checklist.items.append(item)
+        }
+        print("Documents folder is \(documentsDirectory())")
+        print("Data file path is \(dataFilePath())")
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -106,4 +113,31 @@ class AllListsViewController: UITableViewController, AllListsViewControllerDeleg
         
         present(nav_controller, animated: true, completion: nil)
     }
+    
+    func documentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
+    }
+    
+    func dataFilePath() -> URL {
+        return documentsDirectory().appendingPathComponent("Checklists.plist")
+    }
+    
+    func saveChecklistItems() {
+        let data = NSMutableData()
+        let archiver = NSKeyedArchiver(forWritingWith: data)
+        archiver.encode(lists, forKey: "Checklists")
+        archiver.finishEncoding()
+        data.write(to: dataFilePath(), atomically: true)
+    }
+    
+    func loadChecklistData() {
+        let path = dataFilePath()
+        if let data = try? Data(contentsOf: path) {
+            let unarchiver = NSKeyedUnarchiver(forReadingWith: data)
+            lists = unarchiver.decodeObject(forKey: "Checklists") as! [Checklist]
+            unarchiver.finishDecoding()
+        }
+    }
+
 }
