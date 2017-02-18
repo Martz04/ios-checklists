@@ -14,7 +14,7 @@ enum CONST: String {
     case Text = "Text"
     case Item = "Items"
     case Index = "ChecklistIndex"
-    
+    case IconName = "IconName"
     static func valueFor(_ const:CONST) -> String {
         return const.rawValue
     }
@@ -66,6 +66,13 @@ class DataModel {
             lists = unarchiver.decodeObject(forKey: CONST.valueFor(.Checklists)) as! [Checklist]
             unarchiver.finishDecoding()
         }
+        sortChecklists()
+    }
+    
+    func sortChecklists() {
+        lists.sort(by: { checklist1, checklist2 in
+            checklist1.text.localizedStandardCompare(checklist2.text) == .orderedAscending
+        })
     }
 
 }

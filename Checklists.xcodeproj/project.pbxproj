@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		500D00AC1E415900009CCC1A /* ListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500D00AB1E415900009CCC1A /* ListDetailViewController.swift */; };
+		5017CA231E5682FB00410D84 /* IconPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5017CA221E5682FB00410D84 /* IconPickerViewController.swift */; };
 		50252C0C1E4779A400D37C53 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50252C0B1E4779A400D37C53 /* DataModel.swift */; };
 		5036A8BF1E4035F200FDA810 /* AllListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5036A8BE1E4035F200FDA810 /* AllListsViewController.swift */; };
 		5036A8C11E403D5900FDA810 /* Checklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5036A8C01E403D5900FDA810 /* Checklist.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		500D00AB1E415900009CCC1A /* ListDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListDetailViewController.swift; sourceTree = "<group>"; };
+		5017CA221E5682FB00410D84 /* IconPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconPickerViewController.swift; sourceTree = "<group>"; };
 		50252C0B1E4779A400D37C53 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		5036A8BE1E4035F200FDA810 /* AllListsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllListsViewController.swift; sourceTree = "<group>"; };
 		5036A8C01E403D5900FDA810 /* Checklist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checklist.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				5036A8C01E403D5900FDA810 /* Checklist.swift */,
 				500D00AB1E415900009CCC1A /* ListDetailViewController.swift */,
 				50252C0B1E4779A400D37C53 /* DataModel.swift */,
+				5017CA221E5682FB00410D84 /* IconPickerViewController.swift */,
 			);
 			path = Checklists;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 				5046D1081E3AC9D6003630C4 /* ChecklistItem.swift in Sources */,
 				50252C0C1E4779A400D37C53 /* DataModel.swift in Sources */,
 				5036A8BF1E4035F200FDA810 /* AllListsViewController.swift in Sources */,
+				5017CA231E5682FB00410D84 /* IconPickerViewController.swift in Sources */,
 				5046D0F61E3ABF20003630C4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
