@@ -38,4 +38,10 @@ class Checklist: NSObject, NSCoding {
     func countUncheckedItems() -> Int {
         return items.reduce(0, {cnt, item in cnt + (item.checked ? 0 : 1)})
     }
+    
+    func sortChecklistsByDate() {
+        items.sort(by: { item1, item2 in
+            item1.dueDate < item2.dueDate
+        })
+    }
 }

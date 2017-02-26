@@ -19,6 +19,7 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
     override func viewDidLoad() {
         super.viewDidLoad()
         title = checklist.text
+        checklist.sortChecklistsByDate()
         tableView.reloadData()
     }
 
@@ -47,10 +48,13 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
         checklist.items.remove(at: indexPath.row)
         let indexPaths = [indexPath]
         tableView.deleteRows(at: indexPaths, with: .automatic)
+        checklist.sortChecklistsByDate()
+        tableView.reloadData()
     }
     
     func configureCheckMark(for cell:UITableViewCell, with item:ChecklistItem) -> Void {
         let label = cell.viewWithTag(1001) as! UILabel
+        label.textColor = view.tintColor
         if(item.checked) {
             label.text = "√"
         } else {
@@ -60,7 +64,15 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
     
     func configureText(for cell: UITableViewCell, with item: ChecklistItem) -> Void {
         let label = cell.viewWithTag(1000) as! UILabel
+        let dateLabel = cell.viewWithTag(999) as! UILabel
+        
+        //label.text = "\(item.itemID) : \(item.text)"
         label.text = item.text
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .short
+        
+        dateLabel.text = formatter.string(from: item.dueDate)
     }
     
     func itemDetailViewControllerDidCancel(_ controller: ItemDetailViewController) {
@@ -76,7 +88,8 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
         let indexPaths = [indexPath]
         
         tableView.insertRows(at: indexPaths, with: .automatic)
-
+        checklist.sortChecklistsByDate()
+        tableView.reloadData()
         dismiss(animated: true, completion: nil)
     }
     
@@ -87,7 +100,8 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
                 configureText(for: cell, with: item)
             }
         }
-        
+        checklist.sortChecklistsByDate()
+        tableView.reloadData()
         dismiss(animated: true, completion: nil)
     }
     

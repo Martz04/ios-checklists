@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
     var dataModel = DataModel()
@@ -19,6 +20,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let allListController = navigationController.viewControllers[0] as! AllListsViewController
         allListController.dataModel = dataModel
         print(dataModel.dataFilePath())
+        
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound], completionHandler: {
+            granted, error in
+            if granted {
+                print("We have permissions")
+            }else {
+                print("permission denied")
+            }
+        })
+        
+        center.delegate = self
         return true
     }
 
@@ -45,6 +58,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func saveChecklist() {
         dataModel.saveChecklistItems()
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        print("Recieved local notification \(notification)")
     }
 }
 
